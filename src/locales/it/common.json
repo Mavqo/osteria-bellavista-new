@@ -1,0 +1,292 @@
+{
+  "site": {
+    "title": "Osteria Bellavista",
+    "metaTitle": "Osteria Bellavista | Cucina Ticinese con Vista Lago",
+    "description": "Prenota il tuo tavolo all'Osteria Bellavista. Tradizione ticinese, ingredienti locali, vista lago. Un'esperienza gastronomica autentica dal 1987."
+  },
+  "hero": {
+    "title": "Una cucina che racconta il territorio",
+    "location": "Lugano, Ticino"
+  },
+  "about": {
+    "title": "La Nostra Storia",
+    "subtitle": "Dal 1987",
+    "description": "Osteria Bellavista rappresenta l'armonia tra la tradizione ticinese e la bellezza del Lago di Lugano. Da oltre 35 anni portiamo in tavola i sapori autentici del territorio, selezionando ingredienti locali e di stagione.",
+    "philosophy": "Crediamo nella purezza degli ingredienti e nel rispetto della tradizione. Ogni piatto racconta una storia del nostro territorio.",
+    "chef": {
+      "name": "Chef Giovanni Rossi",
+      "title": "Chef Executive",
+      "bio": "Con oltre 30 anni di esperienza nella cucina ticinese, il Chef Giovanni porta la tradizione del territorio in ogni piatto. Formatosi nelle migliori osterie della Valtellina e del Ticino."
+    },
+    "sommelier": {
+      "name": "Marco Bianchi",
+      "title": "Sommelier",
+      "bio": "Esperto di vini ticinesi e italiani, Marco cura la nostra cantina selezionando le migliori etichette del territorio."
+    }
+  },
+  "menu": {
+    "title": "I Nostri Menu",
+    "subtitle": "Sapori di Stagione",
+    "filters": {
+      "v": "Vegetariano",
+      "gf": "Senza Glutine"
+    },
+    "categories": {
+      "antipasti": "Antipasti",
+      "primi": "Primi Piatti",
+      "secondi": "Secondi Piatti",
+      "dolci": "Dolci",
+      "vini": "Vini del Territorio"
+    },
+    "items": {
+      "antipasti": [
+        {
+          "name": "Bresaola della Valtellina",
+          "price": "CHF 24",
+          "description": "Carpaccio di bresaola, rucola, scaglie di grana, olio al limone",
+          "dietary": ["gf"],
+          "image": "/images/menu/bresaola.jpg"
+        },
+        {
+          "name": "Tartare di Manzo",
+          "price": "CHF 28",
+          "description": "Manzo ticinese, tuorlo marinato, capperi di Torricella, crostini",
+          "dietary": [],
+          "image": "/images/menu/tartare.jpg"
+        },
+        {
+          "name": "Risotto ai Funghi",
+          "price": "CHF 26",
+          "description": "Risotto carnaroli, porcini e finferli, olio al tartufo nero",
+          "dietary": ["v"],
+          "image": "/images/menu/risotto-funghi.jpg"
+        }
+      ],
+      "primi": [
+        {
+          "name": "Pizzoccheri della Valtellina",
+          "price": "CHF 22",
+          "description": "Pasta di grano saraceno, cavolo, patate, formaggio Bitto, salvia",
+          "dietary": ["v"],
+          "image": "/images/menu/pizzoccheri.jpg"
+        },
+        {
+          "name": "Ravioli di Magro",
+          "price": "CHF 24",
+          "description": "Ripieni di ricotta e spinaci, burro e salvia, pinoli tostati",
+          "dietary": ["v"],
+          "image": "/images/menu/ravioli.jpg"
+        },
+        {
+          "name": "Polenta Concia",
+          "price": "CHF 20",
+          "description": "Polenta taragna, formaggio Fontina Valle d'Aosta, burro",
+          "dietary": ["v"],
+          "image": "/images/menu/polenta.jpg"
+        }
+      ],
+      "secondi": [
+        {
+          "name": "Filetto di Manzo",
+          "price": "CHF 48",
+          "description": "Taglio scelto 300g, riduzione al Barolo, patate arrosto",
+          "dietary": ["gf"],
+          "image": "/images/menu/filetto.jpg"
+        },
+        {
+          "name": "Cotoletta alla Milanese",
+          "price": "CHF 36",
+          "description": "Lombata di vitello, pangrattato artigianale, contorno di rucola",
+          "dietary": [],
+          "image": "/images/menu/cotoletta.jpg"
+        },
+        {
+          "name": "Branzino al Sale",
+          "price": "CHF 42",
+          "description": "Intero cotto in crosta di sale, olio evo, limone",
+          "dietary": ["gf"],
+          "image": "/images/menu/branzino.jpg"
+        }
+      ],
+      "dolci": [
+        {
+          "name": "Tiramisù della Casa",
+          "price": "CHF 14",
+          "description": "Mascarpone, savoiardi, caffè, cacao amaro in polvere",
+          "dietary": ["v"],
+          "image": "/images/menu/tiramisu.jpg"
+        },
+        {
+          "name": "Panna Cotta ai Frutti di Bosco",
+          "price": "CHF 12",
+          "description": "Vaniglia bourbon, coulis di frutti di bosco, menta fresca",
+          "dietary": ["v", "gf"],
+          "image": "/images/menu/panna-cotta.jpg"
+        },
+        {
+          "name": "Torta di Nocciole",
+          "price": "CHF 16",
+          "description": "Nocciole del Piemonte, cioccolato fondente, gelato alla nocciola",
+          "dietary": ["v"],
+          "image": "/images/menu/torta-nocciole.jpg"
+        }
+      ],
+      "vini": [
+        {
+          "name": "Merlot del Ticino DOC",
+          "price": "CHF 48",
+          "description": "Cantina Orsi, Sottoceneri - Intenso e strutturato",
+          "dietary": ["v", "gf"],
+          "image": "/images/menu/merlot.jpg"
+        },
+        {
+          "name": "Chardonnay Ticino DOC",
+          "price": "CHF 42",
+          "description": "Cantina Monti, Mendrisiotto - Fresco e minerale",
+          "dietary": ["v", "gf"],
+          "image": "/images/menu/chardonnay.jpg"
+        },
+        {
+          "name": "Nebbiolo delle Alpi",
+          "price": "CHF 68",
+          "description": "Riserva DOC, Valtellina - Elegante e longevo",
+          "dietary": ["v", "gf"],
+          "image": "/images/menu/nebbiolo.jpg"
+        }
+      ]
+    }
+  },
+  "gallery": {
+    "title": "Galleria",
+    "description": "Scopri l'atmosfera dei nostri spazi e la bellezza dei nostri piatti."
+  },
+  "reservation": {
+    "title": "Prenotazioni",
+    "description": "Prenota il tuo tavolo per una serata indimenticabile con vista sul Lago di Lugano.",
+    "form": {
+      "date": "Data",
+      "time": "Ora",
+      "guests": "Ospiti",
+      "name": "Nome e Cognome",
+      "email": "Indirizzo Email",
+      "phone": "Telefono",
+      "requests": "Richieste Speciali (Opzionale)",
+      "submit": "Richiedi Prenotazione",
+      "submitting": "Elaborazione...",
+      "success": "Prenotazione richiesta con successo! Ti confermeremo via email a breve.",
+      "error": "Si è verificato un errore durante l'invio. Riprova o chiamaci."
+    },
+    "urgency": "I tavoli per stasera sono limitati.",
+    "cancellation": "Cancellazione gratuita fino a 24 ore prima."
+  },
+  "testimonials": {
+    "title": "Cosa Dicono i Nostri Ospiti"
+  },
+  "location": {
+    "title": "Dove Siamo & Orari",
+    "description": "Ci trovi nel cuore di Lugano, con vista mozzafiato sul lago.",
+    "address": "Via Pessina 12, 6900 Lugano, Ticino",
+    "getDirections": "Ottieni Indicazioni",
+    "parking": "Parcheggio disponibile nelle vicinanze.",
+    "contact": {
+      "phone": "+41 91 123 45 67",
+      "email": "info@osteriabellavista.ch"
+    },
+    "hours": {
+      "heading": "Orari di Apertura",
+      "weekdays": "Martedì - Domenica",
+      "lunch": "Pranzo: 12:00 - 14:30",
+      "dinner": "Cena: 19:00 - 22:30",
+      "closed": "Chiuso: Domenica sera e Lunedì"
+    }
+  },
+  "events": {
+    "title": "Eventi & Esperienze",
+    "subtitle": "Unisciti a Noi",
+    "description": "Dalla cena al tramonto alla degustazione di vini ticinesi, vivi l'Osteria Bellavista in una luce nuova.",
+    "cta": "Richiedi Info",
+    "list": {
+      "sunsetDinner": {
+        "name": "Cena al Tramonto",
+        "description": "Un'esperienza romantica sulla nostra terrazza panoramica mentre il sole calda sul Lago di Lugano. Menu degustazione 4 portate con abbinamento vini.",
+        "price": "180 CHF a persona",
+        "duration": "3 ore",
+        "includes": ["Aperitivo di benvenuto", "Menu degustazione 4 portate", "Abbinamento vini", "Dolce e caffè"]
+      },
+      "wineTasting": {
+        "name": "Degustazione Vini Ticinesi",
+        "description": "Viaggia attraverso i vigneti del Ticino con la guida del nostro sommelier. Scopri i sapori unici dei nostri terroir.",
+        "price": "95 CHF a persona",
+        "duration": "2 ore",
+        "includes": ["6 vini ticinesi selezionati", "Tagliere di formaggi locali", "Spiegazione del territorio", "Attestato"]
+      },
+      "privateEvent": {
+        "name": "Evento Privato",
+        "description": "Celebra momenti speciali nel nostro salone privato con vista lago. Menu personalizzato e servizio dedicato per rendere unica ogni occasione.",
+        "price": "Su richiesta",
+        "duration": "Personalizzabile",
+        "includes": ["Salone esclusivo", "Menu personalizzato", "Servizio dedicato", "Pianoforte su richiesta"]
+      }
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "about": "La Nostra Storia",
+    "story": "Storia",
+    "privateDining": "Cene Private",
+    "reservations": "Prenotazioni",
+    "location": "Dove Siamo",
+    "experiences": "Esperienze",
+    "gallery": "Galleria"
+  },
+  "cta": {
+    "reserve": "Prenota un Tavolo",
+    "viewMenu": "Scopri il Menu"
+  },
+  "a11y": {
+    "skipToContent": "Vai al contenuto",
+    "backToTop": "Torna su",
+    "openMenu": "Apri menu principale",
+    "closeMenu": "Chiudi menu principale"
+  },
+  "newsletterModal": {
+    "title": "Un Regalo dalla Cucina",
+    "description": "Iscriviti alla nostra newsletter per ricevere inviti esclusivi e anteprime del menu stagionale.",
+    "emailPlaceholder": "Il tuo indirizzo email",
+    "submit": "Iscriviti",
+    "noThanks": "No grazie",
+    "dontShowAgain": "Non mostrare più",
+    "success": "Grazie! Sei nella lista."
+  },
+  "footer": {
+    "newsletter": {
+      "heading": "Unisciti al nostro circolo",
+      "description": "Ricevi aggiornamenti esclusivi e inviti agli eventi.",
+      "placeholder": "Indirizzo email",
+      "button": "Iscriviti"
+    },
+    "contact": {
+      "heading": "Contatti",
+      "address": "Via Pessina 12, 6900 Lugano, Ticino, Svizzera",
+      "phone": "+41 91 123 45 67",
+      "email": "info@osteriabellavista.ch"
+    },
+    "hours": {
+      "heading": "Orari",
+      "weekdays": "Mar - Dom: 12:00 - 14:30",
+      "dinner": "Mar - Sab: 19:00 - 22:30",
+      "closed": "Chiuso: Lun e Dom sera"
+    },
+    "social": {
+      "heading": "Seguici",
+      "instagram": "Instagram",
+      "facebook": "Facebook"
+    },
+    "legal": {
+      "copyright": "© {{year}} Osteria Bellavista. Tutti i diritti riservati.",
+      "privacy": "Privacy Policy",
+      "terms": "Termini di Servizio"
+    }
+  }
+}

@@ -1,0 +1,224 @@
+---
+import { useTranslations } from '../lib/i18n';
+import { ThemeToggle } from './ThemeToggle';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+const t = useTranslations(Astro.currentLocale || 'it');
+---
+
+<header id="main-header" class="sticky top-0 z-40 w-full transition-all duration-300 border-b border-transparent">
+  <div class="absolute inset-0 bg-background/0 backdrop-blur-none transition-all duration-300" id="header-bg"></div>
+  
+  <div class="container mx-auto px-4 h-20 flex items-center justify-between relative">
+    <!-- Logo -->
+    <a href="/" class="text-2xl font-serif font-bold tracking-tight z-10 hover:opacity-80 transition-opacity interactive-focus rounded-sm">
+      {t('site.title')}
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-8 z-10">
+      <a href="#story" class="desktop-nav-link text-sm font-medium hover:text-secondary transition-colors interactive-focus rounded-sm">{t('nav.story')}</a>
+      <a href="#menu" class="text-sm font-medium hover:text-secondary transition-colors interactive-focus rounded-sm">{t('nav.menu')}</a>
+      <a href="#events" class="desktop-nav-link text-sm font-medium hover:text-secondary transition-colors interactive-focus rounded-sm">{t('nav.privateDining')}</a>
+      <a href="#location" class="desktop-nav-link text-sm font-medium hover:text-secondary transition-colors interactive-focus rounded-sm">{t('nav.location')}</a>
+    </nav>
+
+    <!-- Actions -->
+    <div class="flex items-center gap-3 z-10">
+      <LanguageSwitcher />
+      <ThemeToggle client:load />
+      <button
+        id="order-online-btn"
+        class="hidden md:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-primary hover:text-primary/80 dark:text-alabaster dark:hover:text-alabaster/80 transition-colors interactive-focus rounded-sm"
+      >
+        {t('orderOnline.title') || 'Order Online'}
+      </button>
+      <a 
+        href="#reservations" 
+        class="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-alabaster bg-primary hover:bg-primary/90 dark:text-charcoal-dark dark:bg-secondary dark:hover:bg-secondary/90 rounded-sm transition-colors interactive-focus"
+      >
+        {t('cta.reserve')}
+      </a>
+      
+      <!-- Mobile Menu Button -->
+      <button id="open-menu-btn" class="md:hidden p-2.5 interactive-focus rounded-sm min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label={t('a11y.openMenu')} aria-expanded="false" aria-controls="mobile-menu">
+        <span class="sr-only">Menu</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col h-[100dvh]" aria-hidden="true">
+    <div class="flex items-center justify-between p-4 border-b border-primary/10">
+      <span class="text-xl font-serif font-bold text-primary dark:text-alabaster">{t('site.title')}</span>
+      <button id="close-menu-btn" class="p-2.5 text-primary dark:text-alabaster min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label={t('a11y.closeMenu')}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    
+    <nav class="flex-1 flex flex-col justify-center items-center gap-8 p-8">
+<a href="#story" class="mobile-nav-link text-3xl font-serif font-medium text-primary dark:text-alabaster hover:opacity-70 transition-opacity interactive-focus rounded-sm min-h-[44px] flex items-center">{t('nav.story')}</a>
+      <a href="#menu" class="mobile-nav-link text-3xl font-serif font-medium text-primary dark:text-alabaster hover:opacity-70 transition-opacity interactive-focus rounded-sm min-h-[44px] flex items-center">{t('nav.menu')}</a>
+      <a href="#events" class="mobile-nav-link text-3xl font-serif font-medium text-primary dark:text-alabaster hover:opacity-70 transition-opacity interactive-focus rounded-sm min-h-[44px] flex items-center">{t('nav.privateDining')}</a>
+      <a href="#location" class="mobile-nav-link text-3xl font-serif font-medium text-primary dark:text-alabaster hover:opacity-70 transition-opacity interactive-focus rounded-sm min-h-[44px] flex items-center">{t('nav.location')}</a>
+      <button id="mobile-order-btn" class="text-3xl font-serif font-medium text-primary dark:text-alabaster hover:opacity-70 transition-opacity interactive-focus rounded-sm text-center min-h-[44px] flex items-center">{t('orderOnline.title') || 'Order Online'}</button>
+    </nav>
+
+    <!-- Mobile Language Switcher -->
+    <div class="p-4 border-t border-primary/10 flex justify-center">
+      <LanguageSwitcher />
+    </div>
+
+    <div class="p-8 border-t border-primary/10 safe-area-bottom">
+      <a href="#reservations" class="w-full flex items-center justify-center px-6 py-4 text-lg font-medium text-alabaster bg-primary hover:bg-primary/90 dark:text-charcoal-dark dark:bg-secondary dark:hover:bg-secondary/90 rounded-sm transition-colors interactive-focus">
+        {t('cta.reserve')}
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('main-header');
+  const headerBg = document.getElementById('header-bg');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const openBtn = document.getElementById('open-menu-btn');
+  const closeBtn = document.getElementById('close-menu-btn');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+  
+  // Scroll Effect
+  const updateHeader = () => {
+    if (window.scrollY > 20) {
+      header?.classList.remove('border-transparent');
+      header?.classList.add('border-primary/10');
+      headerBg?.classList.remove('bg-background/0', 'backdrop-blur-none');
+      headerBg?.classList.add('bg-background/80', 'backdrop-blur-md');
+    } else {
+      header?.classList.add('border-transparent');
+      header?.classList.remove('border-primary/10');
+      headerBg?.classList.add('bg-background/0', 'backdrop-blur-none');
+      headerBg?.classList.remove('bg-background/80', 'backdrop-blur-md');
+    }
+  };
+
+  window.addEventListener('scroll', updateHeader);
+  updateHeader(); // Init
+
+  // Mobile Menu Logic
+  const toggleMenu = (show: boolean) => {
+    if (!mobileMenu || !openBtn) return;
+
+    if (show) {
+      mobileMenu.classList.remove('translate-x-full');
+      mobileMenu.classList.add('translate-x-0');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      openBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      // Focus management: move focus to close button
+      (closeBtn as HTMLElement)?.focus();
+    } else {
+      mobileMenu.classList.add('translate-x-full');
+      mobileMenu.classList.remove('translate-x-0');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      openBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      // Return focus to open button
+      openBtn.focus();
+    }
+  };
+
+  openBtn?.addEventListener('click', () => toggleMenu(true));
+  closeBtn?.addEventListener('click', () => toggleMenu(false));
+
+  // Close menu when clicking a link
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => toggleMenu(false));
+  });
+
+  // Close on escape key
+  document.addEventListener('keydown', (e) => {
+    if (!mobileMenu?.classList.contains('translate-x-0')) return;
+
+    if (e.key === 'Escape') {
+      toggleMenu(false);
+      return;
+    }
+
+    // Focus Trap
+    if (e.key === 'Tab') {
+      const focusableElements = mobileMenu.querySelectorAll(
+        'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select'
+      );
+      if (!focusableElements || focusableElements.length === 0) return;
+
+      const firstElement = focusableElements[0] as HTMLElement;
+      const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
+
+      if (e.shiftKey) { /* shift + tab */
+        if (document.activeElement === firstElement) {
+          lastElement.focus();
+          e.preventDefault();
+        }
+      } else { /* tab */
+        if (document.activeElement === lastElement) {
+          firstElement.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+
+  // Scroll Spy / Active Link Highlighting
+  const setupScrollSpy = () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.desktop-nav-link');
+
+    if (sections.length === 0 || navLinks.length === 0) return;
+
+    const observerOptions = {
+      rootMargin: '-20% 0px -60% 0px', // Active when section is in the upper part of viewport
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Remove active state from all links
+          navLinks.forEach(link => {
+            link.classList.remove('text-secondary', 'font-bold');
+            link.classList.add('font-medium');
+          });
+
+          // Add active state to current link
+          const id = entry.target.getAttribute('id');
+          const activeLink = document.querySelector(`.desktop-nav-link[href="#${id}"]`);
+          if (activeLink) {
+            activeLink.classList.remove('font-medium');
+            activeLink.classList.add('text-secondary', 'font-bold');
+          }
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+  };
+
+  // Initialize Scroll Spy
+  setupScrollSpy();
+
+  // Order Online Triggers
+  const orderBtns = [document.getElementById('order-online-btn'), document.getElementById('mobile-order-btn')];
+  orderBtns.forEach(btn => {
+    btn?.addEventListener('click', () => {
+      document.dispatchEvent(new CustomEvent('open-order-online'));
+      toggleMenu(false); // Close mobile menu if open
+    });
+  });
+</script>

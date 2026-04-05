@@ -1,0 +1,236 @@
+---
+import { useTranslations } from '../lib/i18n';
+
+interface LocationData {
+  title?: string;
+  description?: string;
+  address?: string;
+  getDirections?: string;
+  contact?: {
+    phone?: string;
+    email?: string;
+  };
+  hours?: {
+    heading?: string;
+    weekdays?: string;
+    time?: string;
+  };
+  parking?: string;
+}
+
+interface FooterData {
+  contact?: {
+    address?: string;
+  };
+}
+
+const t = useTranslations(Astro.currentLocale || 'it');
+const locationData = t('location', { returnObjects: true }) as LocationData;
+const footerData = t('footer', { returnObjects: true }) as FooterData; // Fallback/Consistent data
+
+const address = locationData.address || footerData.contact?.address || '';
+const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+
+// Restaurant coordinates (Osteria Bellavista, Lugano, Switzerland)
+const lat = 46.0037;
+const lng = 8.9511;
+---
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+<section id="location" class="py-24 md:py-32 bg-alabaster dark:bg-charcoal-dark text-charcoal dark:text-alabaster">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+      
+      <!-- Map Side -->
+      <div class="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square bg-stone-200 dark:bg-charcoal rounded-lg overflow-hidden shadow-lg reveal-on-scroll">
+        <!-- Leaflet Map Container -->
+        <div id="restaurant-map" class="absolute inset-0 z-0"></div>
+        
+        <!-- Floating Google Maps Link -->
+        <a 
+          href={mapUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="absolute bottom-4 right-4 z-10 bg-white/95 dark:bg-charcoal/95 backdrop-blur text-charcoal dark:text-alabaster px-4 py-2 rounded-full font-medium shadow-lg hover:bg-white dark:hover:bg-charcoal hover:shadow-xl transition-all duration-300 text-sm flex items-center gap-2"
+          aria-label="View location on Google Maps"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          Open in Google Maps
+        </a>
+      </div>
+
+      <!-- Info Side -->
+      <div class="space-y-12 py-4 reveal-on-scroll" data-delay="200">
+        <!-- Heading -->
+        <div class="space-y-4">
+          <span class="text-terracotta uppercase tracking-widest text-sm font-medium">
+            {t('nav.location')}
+          </span>
+          <h2 class="text-4xl md:text-5xl font-serif font-bold leading-tight">
+            {locationData.title}
+          </h2>
+          <p class="text-lg text-charcoal/80 dark:text-alabaster/80 leading-relaxed font-sans max-w-md">
+            {locationData.description}
+          </p>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          
+          <!-- Address & Contact -->
+          <div class="space-y-6">
+            <h3 class="text-xl font-serif font-medium border-b border-charcoal/10 dark:border-alabaster/10 pb-2">Contact</h3>
+            <div class="space-y-4 font-sans text-charcoal/80 dark:text-alabaster/80">
+              <div>
+                <p class="font-medium text-charcoal dark:text-alabaster">Address</p>
+                <p class="leading-relaxed">{address}</p>
+                <a href={mapUrl} target="_blank" rel="noopener noreferrer" class="text-terracotta hover:text-amber-900 dark:hover:text-gold underline underline-offset-4 text-sm mt-1 inline-block transition-colors">
+                  {locationData.getDirections}
+                </a>
+              </div>
+              
+              <div>
+                <p class="font-medium text-charcoal dark:text-alabaster">Get in Touch</p>
+                <p><a href={`tel:${locationData.contact?.phone}`} class="hover:text-terracotta transition-colors">{locationData.contact?.phone}</a></p>
+                <p><a href={`mailto:${locationData.contact?.email}`} class="hover:text-terracotta transition-colors">{locationData.contact?.email}</a></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hours -->
+          <div class="space-y-6">
+            <h3 class="text-xl font-serif font-medium border-b border-charcoal/10 dark:border-alabaster/10 pb-2">{locationData.hours?.heading}</h3>
+            <div class="space-y-4 font-sans text-charcoal/80 dark:text-alabaster/80">
+              <div>
+                <p class="font-medium text-charcoal dark:text-alabaster">{locationData.hours?.weekdays}</p>
+                <p>{locationData.hours?.lunch}</p>
+                <p>{locationData.hours?.dinner}</p>
+              </div>
+              <div>
+                <p class="font-medium text-charcoal dark:text-alabaster">{t('footer.hours.closed')}</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Parking -->
+        <div class="bg-white/50 dark:bg-charcoal/50 p-6 rounded-lg border border-charcoal/5 dark:border-alabaster/10">
+          <div class="flex items-start gap-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-terracotta shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+              <circle cx="7" cy="17" r="2" />
+              <path d="M9 17h6" />
+              <circle cx="17" cy="17" r="2" />
+            </svg>
+            <div>
+              <p class="font-medium text-charcoal dark:text-alabaster mb-1">Parking</p>
+              <p class="text-sm text-charcoal/70 dark:text-alabaster/70 leading-relaxed">
+                {locationData.parking}
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Leaflet JS -->
+<script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<script is:inline define:vars={{ lat, lng, address }}>
+  // Initialize map when DOM is ready
+  function initMap() {
+    const mapContainer = document.getElementById('restaurant-map');
+    if (!mapContainer || mapContainer.dataset.initialized) return;
+    
+    // Mark as initialized to prevent duplicate initialization
+    mapContainer.dataset.initialized = 'true';
+    
+    // Create map centered on restaurant location
+    const map = L.map('restaurant-map', {
+      scrollWheelZoom: false, // Disable scroll zoom for better UX
+      zoomControl: true
+    }).setView([lat, lng], 16);
+    
+    // Add OpenStreetMap tiles (free, no API key required)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    
+    // Custom marker icon
+    const restaurantIcon = L.divIcon({
+      className: 'custom-marker',
+      html: `<div style="
+        background: #C45D3E;
+        width: 32px;
+        height: 32px;
+        border-radius: 50% 50% 50% 0;
+        transform: rotate(-45deg);
+        border: 3px solid white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      ">
+        <span style="transform: rotate(45deg); color: white; font-size: 14px;">★</span>
+      </div>`,
+      iconSize: [32, 32],
+      iconAnchor: [16, 32],
+      popupAnchor: [0, -32]
+    });
+    
+    // Add marker
+    const marker = L.marker([lat, lng], { icon: restaurantIcon }).addTo(map);
+    
+    // Add popup
+    marker.bindPopup(`
+      <div style="text-align: center; padding: 8px;">
+        <strong style="font-size: 14px;">Osteria Bellavista</strong><br>
+        <span style="font-size: 12px; color: #666;">${address}</span>
+      </div>
+    `).openPopup();
+    
+    // Enable scroll zoom on map focus
+    map.on('focus', () => map.scrollWheelZoom.enable());
+    map.on('blur', () => map.scrollWheelZoom.disable());
+  }
+  
+  // Initialize on load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMap);
+  } else {
+    initMap();
+  }
+  
+  // Also initialize on Astro view transitions
+  document.addEventListener('astro:page-load', initMap);
+</script>
+
+<style>
+  /* Fix Leaflet z-index issues */
+  #restaurant-map {
+    z-index: 1;
+  }
+  
+  /* Style the attribution */
+  :global(.leaflet-control-attribution) {
+    font-size: 10px !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+  }
+  
+  /* Custom marker animation */
+  :global(.custom-marker) {
+    background: transparent !important;
+    border: none !important;
+  }
+</style>

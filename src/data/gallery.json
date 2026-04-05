@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1",
+    "src": "/images/gallery/interior-1.jpg",
+    "alt": "Sala ristorante elegante con vista sul Lago di Lugano",
+    "category": "interior",
+    "span": "md:col-span-2 md:row-span-2"
+  },
+  {
+    "id": "2",
+    "src": "/images/gallery/food-1.jpg",
+    "alt": "Filetto di manzo con riduzione al Barolo",
+    "category": "food",
+    "span": "md:col-span-1 md:row-span-1"
+  },
+  {
+    "id": "3",
+    "src": "/images/gallery/lake-1.jpg",
+    "alt": "Vista panoramica del Lago di Lugano e montagne",
+    "category": "lake",
+    "span": "md:col-span-1 md:row-span-2"
+  },
+  {
+    "id": "4",
+    "src": "/images/gallery/food-2.jpg",
+    "alt": "Pasta fresca fatta in casa",
+    "category": "food",
+    "span": "md:col-span-1 md:row-span-1"
+  },
+  {
+    "id": "5",
+    "src": "/images/gallery/interior-2.jpg",
+    "alt": "Atmosfera rustica e accogliente del ristorante",
+    "category": "interior",
+    "span": "md:col-span-1 md:row-span-1"
+  },
+  {
+    "id": "6",
+    "src": "/images/gallery/lake-2.jpg",
+    "alt": "Tramonto spettacolare sul Lago di Lugano",
+    "category": "lake",
+    "span": "md:col-span-2 md:row-span-1"
+  },
+  {
+    "id": "7",
+    "src": "/images/gallery/food-3.jpg",
+    "alt": "Risotto ai funghi porcini e tartufo",
+    "category": "food",
+    "span": "md:col-span-1 md:row-span-1"
+  },
+  {
+    "id": "8",
+    "src": "/images/gallery/interior-3.jpg",
+    "alt": "Tavola apparecchiata per una cena speciale",
+    "category": "interior",
+    "span": "md:col-span-1 md:row-span-1"
+  }
+]

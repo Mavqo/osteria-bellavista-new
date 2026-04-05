@@ -1,0 +1,64 @@
+# =============================================================================
+# Docker Compose - Osteria Bellavista (Astro)
+# Configurazione per Coolify self-hosted
+# =============================================================================
+
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: osteria-bellavista-web
+    
+    # Port mapping per Coolify
+    ports:
+      - "8087:80"
+    
+    # Variabili d'ambiente
+    environment:
+      - NODE_ENV=production
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    
+    # Restart policy
+    restart: unless-stopped
+    
+    # Resource limits (opzionale, regola in base al server)
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+    
+    # Logging
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+# =============================================================================
+# Networks (usato da Coolify automaticamente)
+# =============================================================================
+# Coolify gestisce automaticamente la rete, ma puoi definirne una custom:
+# networks:
+#   default:
+#     name: osteria-network
+#     driver: bridge
+
+# =============================================================================
+# Volumes (non necessario per sito statico)
+# =============================================================================
+# I file statici sono inclusi nell'immagine, nessun volume necessario

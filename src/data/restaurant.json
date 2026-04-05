@@ -1,0 +1,43 @@
+{
+  "name": {
+    "key": "site.title",
+    "default": "Osteria Bellavista"
+  },
+  "tagline": {
+    "key": "hero.title",
+    "default": "Tradizione Ticinese con Vista Lago"
+  },
+  "description": {
+    "key": "site.description",
+    "default": "Tradizione ticinese, ingredienti locali, vista lago. Un'esperienza gastronomica autentica dal 1987."
+  },
+  "address": {
+    "street": "Via Pessina 12",
+    "city": "Lugano",
+    "state": "TI",
+    "zip": "6900",
+    "country": "CH",
+    "display": "Via Pessina 12, 6900 Lugano, Ticino, Svizzera"
+  },
+  "geo": {
+    "latitude": 46.0037,
+    "longitude": 8.9511
+  },
+  "contact": {
+    "phone": "+41 91 123 45 67",
+    "email": "info@osteriabellavista.ch"
+  },
+  "hours": {
+    "weekdays": "Martedì - Domenica",
+    "lunch": "12:00 - 14:30",
+    "dinner": "19:00 - 22:30",
+    "closed": "Domenica sera e Lunedì"
+  },
+  "social": {
+    "instagram": "https://instagram.com/osteriabellavista",
+    "facebook": "https://facebook.com/OsteriaBellavistaLugano"
+  },
+  "priceRange": "$$$",
+  "cuisine": "Cucina Ticinese",
+  "founded": 1987
+}

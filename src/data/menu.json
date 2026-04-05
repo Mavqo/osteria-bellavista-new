@@ -1,0 +1,169 @@
+{
+  "categories": [
+    {
+      "id": "antipasti",
+      "name": { "key": "menu.categories.antipasti", "default": "Antipasti" },
+      "items": [
+        {
+          "id": "bresaola",
+          "name": { "key": "menu.items.bresaola.name", "default": "Bresaola della Valtellina" },
+          "price": 24,
+          "currency": "CHF",
+          "description": { "key": "menu.items.bresaola.description", "default": "Carpaccio di bresaola, rucola, scaglie di grana, olio al limone" },
+          "dietaryTags": ["gf"],
+          "image": "/images/menu/bresaola.jpg"
+        },
+        {
+          "id": "tartare",
+          "name": { "key": "menu.items.tartare.name", "default": "Tartare di Manzo" },
+          "price": 28,
+          "currency": "CHF",
+          "description": { "key": "menu.items.tartare.description", "default": "Manzo ticinese, tuorlo marinato, capperi di Torricella, crostini" },
+          "dietaryTags": [],
+          "image": "/images/menu/tartare.jpg"
+        },
+        {
+          "id": "risotto-funghi",
+          "name": { "key": "menu.items.risottoFunghi.name", "default": "Risotto ai Funghi" },
+          "price": 26,
+          "currency": "CHF",
+          "description": { "key": "menu.items.risottoFunghi.description", "default": "Risotto carnaroli, porcini e finferli, olio al tartufo nero" },
+          "dietaryTags": ["v"],
+          "image": "/images/menu/risotto-funghi.jpg"
+        }
+      ]
+    },
+    {
+      "id": "primi",
+      "name": { "key": "menu.categories.primi", "default": "Primi Piatti" },
+      "items": [
+        {
+          "id": "pizzoccheri",
+          "name": { "key": "menu.items.pizzoccheri.name", "default": "Pizzoccheri della Valtellina" },
+          "price": 22,
+          "currency": "CHF",
+          "description": { "key": "menu.items.pizzoccheri.description", "default": "Pasta di grano saraceno, cavolo, patate, formaggio Bitto, salvia" },
+          "dietaryTags": ["v"],
+          "image": "/images/menu/pizzoccheri.jpg"
+        },
+        {
+          "id": "ravioli-magro",
+          "name": { "key": "menu.items.ravioliMagro.name", "default": "Ravioli di Magro" },
+          "price": 24,
+          "currency": "CHF",
+          "description": { "key": "menu.items.ravioliMagro.description", "default": "Ripieni di ricotta e spinaci, burro e salvia, pinoli tostati" },
+          "dietaryTags": ["v"],
+          "image": "/images/menu/ravioli.jpg"
+        },
+        {
+          "id": "polenta-concia",
+          "name": { "key": "menu.items.polentaConcia.name", "default": "Polenta Concia" },
+          "price": 20,
+          "currency": "CHF",
+          "description": { "key": "menu.items.polentaConcia.description", "default": "Polenta taragna, formaggio Fontina Valle d'Aosta, burro" },
+          "dietaryTags": ["v"],
+          "image": "/images/menu/polenta.jpg"
+        }
+      ]
+    },
+    {
+      "id": "secondi",
+      "name": { "key": "menu.categories.secondi", "default": "Secondi Piatti" },
+      "items": [
+        {
+          "id": "filetto-manzo",
+          "name": { "key": "menu.items.filettoManzo.name", "default": "Filetto di Manzo" },
+          "price": 48,
+          "currency": "CHF",
+          "description": { "key": "menu.items.filettoManzo.description", "default": "Taglio scelto 300g, riduzione al Barolo, patate arrosto" },
+          "dietaryTags": ["gf"],
+          "image": "/images/menu/filetto.jpg"
+        },
+        {
+          "id": "cotoletta",
+          "name": { "key": "menu.items.cotoletta.name", "default": "Cotoletta alla Milanese" },
+          "price": 36,
+          "currency": "CHF",
+          "description": { "key": "menu.items.cotoletta.description", "default": "Lombata di vitello, pangrattato artigianale, contorno di rucola" },
+          "dietaryTags": [],
+          "image": "/images/menu/cotoletta.jpg"
+        },
+        {
+          "id": "branzino-sale",
+          "name": { "key": "menu.items.branzinoSale.name", "default": "Branzino al Sale" },
+          "price": 42,
+          "currency": "CHF",
+          "description": { "key": "menu.items.branzinoSale.description", "default": "Intero cotto in crosta di sale, olio evo, limone" },
+          "dietaryTags": ["gf"],
+          "image": "/images/menu/branzino.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dolci",
+      "name": { "key": "menu.categories.dolci", "default": "Dolci" },
+      "items": [
+        {
+          "id": "tiramisu",
+          "name": { "key": "menu.items.tiramisu.name", "default": "Tiramisù della Casa" },
+          "price": 14,
+          "currency": "CHF",
+          "description": { "key": "menu.items.tiramisu.description", "default": "Mascarpone, savoiardi, caffè, cacao amaro in polvere" },
+          "dietaryTags": ["v"],
+          "image": "/images/menu/tiramisu.jpg"
+        },
+        {
+          "id": "panna-cotta",
+          "name": { "key": "menu.items.pannaCotta.name", "default": "Panna Cotta ai Frutti di Bosco" },
+          "price": 12,
+          "currency": "CHF",
+          "description": { "key": "menu.items.pannaCotta.description", "default": "Vaniglia bourbon, coulis di frutti di bosco, menta fresca" },
+          "dietaryTags": ["v", "gf"],
+          "image": "/images/menu/panna-cotta.jpg"
+        },
+        {
+          "id": "torta-nocciole",
+          "name": { "key": "menu.items.tortaNocciole.name", "default": "Torta di Nocciole" },
+          "price": 16,
+          "currency": "CHF",
+          "description": { "key": "menu.items.tortaNocciole.description", "default": "Nocciole del Piemonte, cioccolato fondente, gelato alla nocciola" },
+          "dietaryTags": ["v"],
+          "image": "/images/menu/torta-nocciole.jpg"
+        }
+      ]
+    },
+    {
+      "id": "vini",
+      "name": { "key": "menu.categories.vini", "default": "Vini del Territorio" },
+      "items": [
+        {
+          "id": "merlot-ticino",
+          "name": { "key": "menu.items.merlotTicino.name", "default": "Merlot del Ticino DOC" },
+          "price": 48,
+          "currency": "CHF",
+          "description": { "key": "menu.items.merlotTicino.description", "default": "Cantina Orsi, Sottoceneri - Intenso e strutturato" },
+          "dietaryTags": ["v", "gf"],
+          "image": "/images/menu/merlot.jpg"
+        },
+        {
+          "id": "chardonnay-ticino",
+          "name": { "key": "menu.items.chardonnayTicino.name", "default": "Chardonnay Ticino DOC" },
+          "price": 42,
+          "currency": "CHF",
+          "description": { "key": "menu.items.chardonnayTicino.description", "default": "Cantina Monti, Mendrisiotto - Fresco e minerale" },
+          "dietaryTags": ["v", "gf"],
+          "image": "/images/menu/chardonnay.jpg"
+        },
+        {
+          "id": "nebbiolo-alpi",
+          "name": { "key": "menu.items.nebbioloAlpi.name", "default": "Nebbiolo delle Alpi" },
+          "price": 68,
+          "currency": "CHF",
+          "description": { "key": "menu.items.nebbioloAlpi.description", "default": "Riserva DOC, Valtellina - Elegante e longevo" },
+          "dietaryTags": ["v", "gf"],
+          "image": "/images/menu/nebbiolo.jpg"
+        }
+      ]
+    }
+  ]
+}

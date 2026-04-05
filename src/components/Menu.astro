@@ -1,0 +1,90 @@
+---
+import MenuDisplay from './MenuDisplay';
+import { useTranslations } from '../lib/i18n';
+import type menuJson from '../locales/it/common.json';
+
+interface MenuItem {
+  name: string;
+  price: string;
+  description: string;
+  dietary?: string[];
+  image?: string;
+}
+
+// Get translations
+const t = useTranslations(Astro.currentLocale || 'it');
+
+// Import menu data directly from JSON for proper typing
+const locale = Astro.currentLocale || 'it';
+const commonData = locale === 'en' 
+  ? (await import('../locales/en/common.json')).default
+  : (await import('../locales/it/common.json')).default;
+const menuData = commonData.menu as typeof menuJson.menu;
+
+// Helper to map dietary tags to Schema.org URLs
+const dietaryMap: { [key: string]: string } = {
+  'v': 'https://schema.org/VegetarianDiet',
+  'gf': 'https://schema.org/GlutenFreeDiet',
+  'vg': 'https://schema.org/VeganDiet'
+};
+
+// Generate Menu Schema
+const menuSchema = {
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  "name": `${commonData.site.title} Menu`,
+  "description": menuData.title,
+  "hasMenuSection": Object.keys(menuData.categories).map(key => {
+    const categoryName = menuData.categories[key];
+    const items = menuData.items[key] || [];
+    
+    return {
+      "@type": "MenuSection",
+      "name": categoryName,
+      "hasMenuItem": items.map((item: MenuItem) => {
+        const dietaryRestricts = item.dietary ? item.dietary.map((d: string) => dietaryMap[d]).filter(Boolean) : [];
+        
+        // Parse price (handle CHF format)
+        const priceStr = item.price.replace('CHF ', '').replace('$', '');
+        const offers: { "@type": string; price: string; priceCurrency: string }[] = [];
+        
+        if (priceStr.includes('/')) {
+             const prices = priceStr.split('/').map((p: string) => p.trim().replace('CHF ', '').replace('$', ''));
+             prices.forEach((p: string) => {
+                 offers.push({
+                    "@type": "Offer",
+                    "price": p,
+                    "priceCurrency": "CHF"
+                 });
+             });
+        } else {
+            offers.push({
+                "@type": "Offer",
+                "price": priceStr,
+                "priceCurrency": "CHF"
+            });
+        }
+
+        return {
+          "@type": "MenuItem",
+          "name": item.name,
+          "description": item.description,
+          "offers": offers,
+          "suitableForDiet": dietaryRestricts.length > 0 ? dietaryRestricts : undefined
+        };
+      })
+    };
+  })
+};
+---
+
+<section id="menu" class="py-24 md:py-32 bg-alabaster dark:bg-charcoal-dark relative scroll-mt-20 reveal-on-scroll">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 mb-16 md:mb-24 text-center">
+    <span class="text-xs font-sans uppercase tracking-[0.2em] text-charcoal/60 dark:text-alabaster/60 mb-4 block">{t('menu.subtitle')}</span>
+    <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-medium text-charcoal dark:text-alabaster">{menuData.title}</h2>
+  </div>
+
+  <MenuDisplay client:visible data={menuData} />
+  
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(menuSchema)} />
+</section>

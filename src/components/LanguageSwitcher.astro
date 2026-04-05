@@ -1,0 +1,84 @@
+---
+/**
+ * Language Switcher Component
+ * Switch tra IT e EN mantenendo il pathname corrente
+ */
+
+const currentPath = Astro.url.pathname;
+const currentLocale = Astro.currentLocale || 'it';
+
+// Calcola i link per le lingue
+const isItalian = currentLocale === 'it';
+
+// Link per EN: se siamo su /menu → /en/menu, se su / → /en/
+const enPath = isItalian 
+  ? (currentPath === '/' ? '/en/' : `/en${currentPath}`)
+  : currentPath;
+
+// Link per IT: se siamo su /en/menu → /menu, se su /en/ → /
+const itPath = isItalian
+  ? currentPath
+  : currentPath.replace(/^\/en/, '') || '/';
+---
+
+<div 
+  class="language-switcher flex items-center gap-1" 
+  role="group" 
+  aria-label="Seleziona lingua / Select language"
+>
+  <!-- IT Button -->
+  <a
+    href={itPath}
+    class:list={[
+      "relative px-2 py-1 text-sm font-medium transition-all duration-200 rounded-sm interactive-focus min-w-[32px] text-center",
+      isItalian 
+        ? "text-alabaster bg-primary dark:text-charcoal-dark dark:bg-secondary" 
+        : "text-primary/60 hover:text-primary dark:text-alabaster/60 dark:hover:text-alabaster"
+    ]}
+    aria-current={isItalian ? "page" : undefined}
+    aria-label="Italiano"
+    title="Italiano"
+  >
+    IT
+  </a>
+
+  <!-- Separator -->
+  <span class="text-primary/30 dark:text-alabaster/30 text-sm" aria-hidden="true">|</span>
+
+  <!-- EN Button -->
+  <a
+    href={enPath}
+    class:list={[
+      "relative px-2 py-1 text-sm font-medium transition-all duration-200 rounded-sm interactive-focus min-w-[32px] text-center",
+      !isItalian 
+        ? "text-alabaster bg-primary dark:text-charcoal-dark dark:bg-secondary" 
+        : "text-primary/60 hover:text-primary dark:text-alabaster/60 dark:hover:text-alabaster"
+    ]}
+    aria-current={!isItalian ? "page" : undefined}
+    aria-label="English"
+    title="English"
+  >
+    EN
+  </a>
+</div>
+
+<style>
+  /* Stili specifici per il language switcher */
+  .language-switcher a {
+    position: relative;
+  }
+  
+  /* Active indicator (opzionale - dot sotto) */
+  .language-switcher a[aria-current="page"]::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: currentColor;
+    opacity: 0.5;
+  }
+</style>

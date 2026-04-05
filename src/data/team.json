@@ -1,0 +1,24 @@
+{
+  "members": [
+    {
+      "id": "executive-chef",
+      "name": { "key": "about.chef.name", "default": "Chef Giovanni Rossi" },
+      "title": { "key": "about.chef.title", "default": "Chef Executive" },
+      "bio": { "key": "about.chef.bio", "default": "Con oltre 30 anni di esperienza nella cucina ticinese, il Chef Giovanni porta la tradizione del territorio in ogni piatto. Formatosi nelle migliori osterie della Valtellina e del Ticino, ha saputo creare un menu che celebra i sapori autentici del Lago di Lugano." },
+      "image": "/images/chef.jpg",
+      "social": {
+        "instagram": "https://instagram.com/chefgiovanni"
+      }
+    },
+    {
+      "id": "sommelier",
+      "name": { "key": "about.sommelier.name", "default": "Marco Bianchi" },
+      "title": { "key": "about.sommelier.title", "default": "Sommelier" },
+      "bio": { "key": "about.sommelier.bio", "default": "Esperto di vini ticinesi e italiani, Marco cura la nostra cantina selezionando le migliori etichette del territorio. La sua passione per il vino si unisce alla conoscenza approfondita degli abbinamenti culinari." },
+      "image": "/images/sommelier.jpg",
+      "social": {
+        "instagram": "https://instagram.com/marcobianchi_wine"
+      }
+    }
+  ]
+}

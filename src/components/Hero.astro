@@ -1,0 +1,118 @@
+---
+import { useTranslations } from '../lib/i18n';
+import OptimizedImage from './ui/OptimizedImage.astro';
+import heroBg from '../assets/images/hero.jpg';
+
+const currentLocale = Astro.currentLocale || 'it';
+
+const t = useTranslations(Astro.currentLocale || 'it');
+---
+
+<section id="hero" class="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden">
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0 z-0 h-[120%] -top-[10%] w-full" data-parallax-speed="0.5">
+    <OptimizedImage
+      src={heroBg}
+      alt="Osteria Bellavista - Vista Interna"
+      class="w-full h-full object-cover"
+      loading="eager"
+      fetchpriority="high"
+      sizes="100vw"
+    />
+    <!-- Gradient overlay for better text readability -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/50 z-10"></div>
+  </div>
+
+  <!-- Video Background Placeholder (Hidden/Commented) -->
+  <!-- 
+  <video 
+    class="absolute inset-0 w-full h-full object-cover z-0 opacity-0 transition-opacity duration-1000"
+    autoplay 
+    muted 
+    loop 
+    playsinline
+    poster="/hero-poster.jpg"
+  >
+    <source src="/hero-video.mp4" type="video/mp4" />
+  </video>
+  -->
+
+  <!-- Content -->
+  <div class="relative z-20 text-center px-4 max-w-4xl mx-auto space-y-8 animate-fade-in-up">
+    <div class="space-y-4">
+      <p class="text-xl md:text-2xl font-sans text-alabaster tracking-widest uppercase" style="text-shadow: 0 2px 8px rgba(0,0,0,0.5);">
+        {t('hero.location') || 'Lugano, Ticino'}
+      </p>
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-alabaster leading-tight" style="text-shadow: 0 4px 16px rgba(0,0,0,0.6);">
+        {t('hero.title') || 'Una cucina che racconta il territorio'}
+      </h1>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+      <a
+        href="#reservations"
+        class="min-w-[200px] px-8 py-4 rounded-full font-medium text-lg bg-terracotta hover:bg-terracotta/90 text-alabaster shadow-lg shadow-black/30 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta/50 inline-flex items-center justify-center"
+        style="text-shadow: 0 1px 2px rgba(0,0,0,0.3);"
+      >
+        {t('cta.reserve')}
+      </a>
+      <a
+        href="#menu"
+        class="min-w-[200px] px-8 py-4 rounded-full font-medium text-lg bg-alabaster/10 dark:bg-charcoal/30 backdrop-blur-sm border-2 border-alabaster dark:border-alabaster text-alabaster hover:bg-alabaster hover:text-charcoal dark:hover:bg-alabaster dark:hover:text-charcoal transition-all duration-300 ease-out hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-alabaster/50 inline-flex items-center justify-center"
+        style="text-shadow: 0 1px 2px rgba(0,0,0,0.3);"
+      >
+        {t('cta.viewMenu')}
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      class="h-8 w-8 text-alabaster/80" 
+      fill="none" 
+      viewBox="0 0 24 24" 
+      stroke="currentColor"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+    </svg>
+  </div>
+</section>
+
+<style>
+  /* Simple fade-in animation */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 1s ease-out forwards;
+  }
+</style>
+
+<script>
+  import { trackEvent } from '../lib/analytics';
+
+  const hero = document.getElementById('hero');
+  if (hero) {
+    const reserveLink = hero.querySelector('a[href="#reservations"]');
+    const menuLink = hero.querySelector('a[href="#menu"]');
+
+    reserveLink?.addEventListener('click', () => {
+      trackEvent('CTA', 'Click', 'Hero - Reserve');
+    });
+
+    menuLink?.addEventListener('click', () => {
+      trackEvent('CTA', 'Click', 'Hero - View Menu');
+    });
+  }
+</script>
+

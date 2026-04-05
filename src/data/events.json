@@ -1,0 +1,35 @@
+[
+  {
+    "id": "cena-tramonto",
+    "name": "Cena al Tramonto",
+    "description": "Un'esperienza romantica sulla nostra terrazza panoramica mentre il sole calda sul Lago di Lugano. Menu degustazione 4 portate con abbinamento vini.",
+    "type": "event",
+    "duration": "3 ore",
+    "price": "180 CHF a persona",
+    "includes": ["Aperitivo di benvenuto", "Menu degustazione 4 portate", "Abbinamento vini", "Dolce e caffè"],
+    "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+    "url": "#prenota"
+  },
+  {
+    "id": "degustazione-vini",
+    "name": "Degustazione Vini Ticinesi",
+    "description": "Viaggia attraverso i vigneti del Ticino con la guida del nostro sommelier. Scopri i sapori unici dei nostri terroir.",
+    "type": "event",
+    "duration": "2 ore",
+    "price": "95 CHF a persona",
+    "includes": ["6 vini ticinesi selezionati", "Tagliere di formaggi locali", "Spiegazione del territorio", "Attestato"],
+    "image": "https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=800&q=80",
+    "url": "#prenota"
+  },
+  {
+    "id": "evento-privato",
+    "name": "Evento Privato",
+    "description": "Celebra momenti speciali nel nostro salone privato con vista lago. Menu personalizzato e servizio dedicato per rendere unica ogni occasione.",
+    "type": "event",
+    "duration": "Personalizzabile",
+    "price": "Su richiesta",
+    "includes": ["Salone esclusivo", "Menu personalizzato", "Servizio dedicato", "Pianoforte su richiesta"],
+    "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80",
+    "url": "#contatti"
+  }
+]

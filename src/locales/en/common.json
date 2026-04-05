@@ -1,0 +1,315 @@
+{
+  "site": {
+    "title": "Osteria Bellavista",
+    "metaTitle": "Osteria Bellavista | Ticino Cuisine with Lake View",
+    "description": "Book your table at Osteria Bellavista. Ticino tradition, local ingredients, lake view. An authentic culinary experience since 1987."
+  },
+  "hero": {
+    "title": "A cuisine that tells the story of the territory",
+    "location": "Lugano, Ticino"
+  },
+  "about": {
+    "title": "Our Story",
+    "subtitle": "Since 1987",
+    "description": "Osteria Bellavista represents the harmony between Ticino tradition and the beauty of Lake Lugano. For over 35 years we have brought the authentic flavors of the territory to the table, selecting local and seasonal ingredients.",
+    "philosophy": "We believe in the purity of ingredients and respect for tradition. Every dish tells a story of our territory.",
+    "chef": {
+      "name": "Chef Giovanni Rossi",
+      "title": "Executive Chef",
+      "bio": "With over 30 years of experience in Ticino cuisine, Chef Giovanni brings the tradition of the territory to every dish. Trained in the best osterias of Valtellina and Ticino."
+    },
+    "sommelier": {
+      "name": "Marco Bianchi",
+      "title": "Sommelier",
+      "bio": "Expert in Ticino and Italian wines, Marco curates our cellar selecting the best labels from the territory."
+    }
+  },
+  "menu": {
+    "title": "Our Menus",
+    "subtitle": "Taste the Season",
+    "filters": {
+      "v": "Vegetarian",
+      "gf": "Gluten Free"
+    },
+    "categories": {
+      "antipasti": "Appetizers",
+      "primi": "First Courses",
+      "secondi": "Main Courses",
+      "dolci": "Desserts",
+      "vini": "Local Wines"
+    },
+    "items": {
+      "antipasti": [
+        {
+          "name": "Valtellina Bresaola",
+          "price": "CHF 24",
+          "description": "Bresaola carpaccio, arugula, grana flakes, lemon oil",
+          "dietary": ["gf"],
+          "image": "/images/menu/bresaola.jpg"
+        },
+        {
+          "name": "Beef Tartare",
+          "price": "CHF 28",
+          "description": "Ticino beef, marinated yolk, Torricella capers, croutons",
+          "dietary": [],
+          "image": "/images/menu/tartare.jpg"
+        },
+        {
+          "name": "Mushroom Risotto",
+          "price": "CHF 26",
+          "description": "Carnaroli risotto, porcini and chanterelles, black truffle oil",
+          "dietary": ["v"],
+          "image": "/images/menu/risotto-funghi.jpg"
+        }
+      ],
+      "primi": [
+        {
+          "name": "Valtellina Pizzoccheri",
+          "price": "CHF 22",
+          "description": "Buckwheat pasta, cabbage, potatoes, Bitto cheese, sage",
+          "dietary": ["v"],
+          "image": "/images/menu/pizzoccheri.jpg"
+        },
+        {
+          "name": "Ravioli di Magro",
+          "price": "CHF 24",
+          "description": "Filled with ricotta and spinach, butter and sage, toasted pine nuts",
+          "dietary": ["v"],
+          "image": "/images/menu/ravioli.jpg"
+        },
+        {
+          "name": "Polenta Concia",
+          "price": "CHF 20",
+          "description": "Taragna polenta, Fontina Valle d'Aosta cheese, butter",
+          "dietary": ["v"],
+          "image": "/images/menu/polenta.jpg"
+        }
+      ],
+      "secondi": [
+        {
+          "name": "Beef Fillet",
+          "price": "CHF 48",
+          "description": "Selected cut 300g, Barolo reduction, roast potatoes",
+          "dietary": ["gf"],
+          "image": "/images/menu/filetto.jpg"
+        },
+        {
+          "name": "Milanese Cutlet",
+          "price": "CHF 36",
+          "description": "Veal loin, artisan breadcrumbs, arugula side",
+          "dietary": [],
+          "image": "/images/menu/cotoletta.jpg"
+        },
+        {
+          "name": "Sea Salt Sea Bass",
+          "price": "CHF 42",
+          "description": "Whole cooked in salt crust, evo oil, lemon",
+          "dietary": ["gf"],
+          "image": "/images/menu/branzino.jpg"
+        }
+      ],
+      "dolci": [
+        {
+          "name": "House Tiramisù",
+          "price": "CHF 14",
+          "description": "Mascarpone, ladyfingers, coffee, bitter cocoa powder",
+          "dietary": ["v"],
+          "image": "/images/menu/tiramisu.jpg"
+        },
+        {
+          "name": "Berry Panna Cotta",
+          "price": "CHF 12",
+          "description": "Bourbon vanilla, berry coulis, fresh mint",
+          "dietary": ["v", "gf"],
+          "image": "/images/menu/panna-cotta.jpg"
+        },
+        {
+          "name": "Hazelnut Cake",
+          "price": "CHF 16",
+          "description": "Piedmont hazelnuts, dark chocolate, hazelnut ice cream",
+          "dietary": ["v"],
+          "image": "/images/menu/torta-nocciole.jpg"
+        }
+      ],
+      "vini": [
+        {
+          "name": "Ticino Merlot DOC",
+          "price": "CHF 48",
+          "description": "Cantina Orsi, Sottoceneri - Intense and structured",
+          "dietary": ["v", "gf"],
+          "image": "/images/menu/merlot.jpg"
+        },
+        {
+          "name": "Ticino Chardonnay DOC",
+          "price": "CHF 42",
+          "description": "Cantina Monti, Mendrisiotto - Fresh and mineral",
+          "dietary": ["v", "gf"],
+          "image": "/images/menu/chardonnay.jpg"
+        },
+        {
+          "name": "Nebbiolo delle Alpi",
+          "price": "CHF 68",
+          "description": "Riserva DOC, Valtellina - Elegant and long-lived",
+          "dietary": ["v", "gf"],
+          "image": "/images/menu/nebbiolo.jpg"
+        }
+      ]
+    }
+  },
+  "gallery": {
+    "title": "Gallery",
+    "description": "Discover the atmosphere of our spaces and the beauty of our dishes."
+  },
+  "reservation": {
+    "title": "Reservations",
+    "description": "Book your table for an unforgettable evening with a view of Lake Lugano.",
+    "form": {
+      "date": "Date",
+      "time": "Time",
+      "guests": "Guests",
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone",
+      "requests": "Special Requests (Optional)",
+      "submit": "Request Reservation",
+      "submitting": "Processing...",
+      "success": "Reservation requested successfully! We will confirm via email shortly.",
+      "error": "An error occurred while submitting. Please try again or call us."
+    },
+    "urgency": "Tables for tonight are limited.",
+    "cancellation": "Free cancellation up to 24 hours before."
+  },
+  "testimonials": {
+    "title": "What Our Guests Say"
+  },
+  "location": {
+    "title": "Where We Are & Hours",
+    "description": "Find us in the heart of Lugano, with a breathtaking view of the lake.",
+    "address": "Via Pessina 12, 6900 Lugano, Ticino",
+    "getDirections": "Get Directions",
+    "parking": "Parking available nearby.",
+    "contact": {
+      "phone": "+41 91 123 45 67",
+      "email": "info@osteriabellavista.ch"
+    },
+    "hours": {
+      "heading": "Opening Hours",
+      "weekdays": "Tuesday - Sunday",
+      "lunch": "Lunch: 12:00 - 14:30",
+      "dinner": "Dinner: 19:00 - 22:30",
+      "closed": "Closed: Sunday evening and Monday"
+    }
+  },
+  "events": {
+    "title": "Events & Experiences",
+    "subtitle": "Join Us",
+    "description": "From sunset dinners to Ticino wine tastings, experience Osteria Bellavista in a new light.",
+    "cta": "Request Info",
+    "list": {
+      "sunsetDinner": {
+        "name": "Sunset Dinner",
+        "description": "A romantic experience on our panoramic terrace as the sun sets over Lake Lugano. 4-course tasting menu with wine pairing.",
+        "price": "180 CHF per person",
+        "duration": "3 hours",
+        "includes": ["Welcome aperitif", "4-course tasting menu", "Wine pairing", "Dessert and coffee"]
+      },
+      "wineTasting": {
+        "name": "Ticino Wine Tasting",
+        "description": "Journey through the Ticino vineyards with the guidance of our sommelier. Discover the unique flavors of our terroir.",
+        "price": "95 CHF per person",
+        "duration": "2 hours",
+        "includes": ["6 selected Ticino wines", "Local cheese platter", "Terroir explanation", "Certificate"]
+      },
+      "privateEvent": {
+        "name": "Private Event",
+        "description": "Celebrate special moments in our private lounge with lake view. Customized menu and dedicated service to make every occasion unique.",
+        "price": "On request",
+        "duration": "Customizable",
+        "includes": ["Exclusive lounge", "Customized menu", "Dedicated service", "Piano on request"]
+      }
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "about": "Our Story",
+    "story": "Story",
+    "privateDining": "Private Dining",
+    "reservations": "Reservations",
+    "location": "Location",
+    "experiences": "Experiences",
+    "gallery": "Gallery"
+  },
+  "cta": {
+    "reserve": "Reserve a Table",
+    "viewMenu": "Discover the Menu"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "backToTop": "Back to top",
+    "openMenu": "Open main menu",
+    "closeMenu": "Close main menu"
+  },
+  "newsletterModal": {
+    "title": "A Gift from the Kitchen",
+    "description": "Subscribe to our newsletter to receive exclusive invites and seasonal menu previews.",
+    "emailPlaceholder": "Your email address",
+    "submit": "Subscribe",
+    "noThanks": "No thanks",
+    "dontShowAgain": "Don't show again",
+    "success": "Thank you! You're on the list."
+  },
+  "orderOnline": {
+    "title": "Order Online",
+    "delivery": "Delivery",
+    "pickup": "Pickup",
+    "deliveryPartners": "Delivery Partners",
+    "pickupTime": "Select Pickup Time",
+    "asap": "As soon as possible",
+    "schedule": "Schedule for later",
+    "close": "Close",
+    "orderNow": "Order Now"
+  },
+  "error404": {
+    "title": "Off the Map",
+    "description": "It seems you've wandered off the path. The page you are looking for has not been found.",
+    "returnHome": "Return Home",
+    "reserveTable": "Reserve a Table"
+  },
+  "demoDisclaimer": {
+    "title": "This is a Demo Website",
+    "description": "You are viewing a sample restaurant website template. The link you clicked is a placeholder and does not lead to a real destination.",
+    "iUnderstand": "I Understand",
+    "dontShowAgain": "Don't show again"
+  },
+  "footer": {
+    "newsletter": {
+      "heading": "Join our circle",
+      "description": "Receive exclusive updates and event invitations.",
+      "placeholder": "Email address",
+      "button": "Subscribe"
+    },
+    "contact": {
+      "heading": "Contact",
+      "address": "Via Pessina 12, 6900 Lugano, Ticino, Switzerland",
+      "phone": "+41 91 123 45 67",
+      "email": "info@osteriabellavista.ch"
+    },
+    "hours": {
+      "heading": "Hours",
+      "weekdays": "Tue - Sun: 12:00 - 14:30",
+      "dinner": "Tue - Sat: 19:00 - 22:30",
+      "closed": "Closed: Mon and Sun evening"
+    },
+    "social": {
+      "heading": "Follow Us",
+      "instagram": "Instagram",
+      "facebook": "Facebook"
+    },
+    "legal": {
+      "copyright": "© {{year}} Osteria Bellavista. All rights reserved.",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
+  }
+}

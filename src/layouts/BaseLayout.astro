@@ -1,0 +1,203 @@
+---
+import '@fontsource/playfair-display';
+import '@fontsource/dm-sans';
+import '../styles/global.css';
+import { useTranslations } from '../lib/i18n';
+import WebVitals from '../components/analytics/WebVitals.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+import BackToTop from '../components/BackToTop.astro';
+import { NewsletterModal } from '../components/NewsletterModal';
+import { OrderOnlineModal } from '../components/OrderOnlineModal';
+import { DemoDisclaimerModal } from '../components/DemoDisclaimerModal';
+import SEOSchema from '../components/SEOSchema.astro';
+import PWAHandler from '../components/PWAHandler.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const t = useTranslations(Astro.currentLocale || 'it');
+const siteDescription = description || t('site.description');
+// Ensure base URL ends with a slash
+const base = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL 
+  : import.meta.env.BASE_URL + '/';
+---
+
+<html lang={Astro.currentLocale || 'it'} class="scroll-smooth overflow-x-hidden">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={siteDescription} />
+    <link rel="manifest" href={`${base}manifest.json`} />
+    <meta name="theme-color" content="#1a1a1a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Osteria Bellavista" />
+    <link rel="apple-touch-icon" href={`${base}images/icons/apple-icon-180.png`} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={siteDescription} />
+    <meta property="og:image" content={new URL('/images/hero.jpg', Astro.url)} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={siteDescription} />
+    <meta property="twitter:image" content={new URL('/images/hero.jpg', Astro.url)} />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={Astro.url} />
+
+    <SEOSchema />
+    <WebVitals />
+    <script is:inline>
+      const getTheme = () => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      };
+      const theme = getTheme();
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      window.localStorage.setItem('theme', theme);
+    </script>
+  </head>
+  <body class="bg-background text-foreground font-sans antialiased selection:bg-accent selection:text-white flex flex-col min-h-screen overflow-x-hidden">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-primary text-alabaster rounded-md shadow-lg"
+    >
+      {t('a11y.skipToContent') || 'Skip to content'}
+    </a>
+
+    <Header />
+
+    <main id="main-content" class="flex-grow">
+      <slot />
+    </main>
+
+    <Footer />
+    <BackToTop />
+    <FloatingCTA />
+    <NewsletterModal 
+      client:load 
+      strings={{
+        title: t('newsletterModal.title'),
+        description: t('newsletterModal.description'),
+        emailPlaceholder: t('newsletterModal.emailPlaceholder'),
+        submit: t('newsletterModal.submit'),
+        noThanks: t('newsletterModal.noThanks'),
+        dontShowAgain: t('newsletterModal.dontShowAgain'),
+        success: t('newsletterModal.success'),
+      }}
+    />
+    <OrderOnlineModal
+      client:load
+      strings={{
+        title: t('orderOnline.title'),
+        delivery: t('orderOnline.delivery'),
+        pickup: t('orderOnline.pickup'),
+        deliveryPartners: t('orderOnline.deliveryPartners'),
+        pickupTime: t('orderOnline.pickupTime'),
+        asap: t('orderOnline.asap'),
+        schedule: t('orderOnline.schedule'),
+        close: t('orderOnline.close'),
+        orderNow: t('orderOnline.orderNow'),
+      }}
+    />
+    <DemoDisclaimerModal
+      client:load
+      strings={{
+        title: t('demoDisclaimer.title'),
+        description: t('demoDisclaimer.description'),
+        iUnderstand: t('demoDisclaimer.iUnderstand'),
+        dontShowAgain: t('demoDisclaimer.dontShowAgain'),
+      }}
+    />
+    <PWAHandler />
+
+    <script>
+      import { trackPageView } from '../lib/analytics';
+      import { initErrorTracking } from '../lib/error-tracking';
+      
+      // Initialize error tracking
+      initErrorTracking();
+      
+      // Track initial page view
+      trackPageView(window.location.pathname);
+
+      // Fade-in animation
+
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Add delay if specified
+            const delay = entry.target.getAttribute('data-delay');
+            if (delay) {
+              (entry.target as HTMLElement).style.transitionDelay = `${delay}ms`;
+            }
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const revealElements = document.querySelectorAll('.reveal-on-scroll');
+        revealElements.forEach((el) => {
+          observer.observe(el);
+        });
+
+        // Parallax animation (Parallax Effect)
+        // Only apply if not reduced motion
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
+        if (!prefersReducedMotion) {
+          const parallaxElements = document.querySelectorAll('[data-parallax-speed]');
+          
+          if (parallaxElements.length > 0) {
+            window.addEventListener('scroll', () => {
+              const scrolled = window.scrollY;
+              parallaxElements.forEach(el => {
+                // Check if element is in viewport to avoid unnecessary calcs
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                   const speed = parseFloat(el.getAttribute('data-parallax-speed') || '0.5');
+                   // We limit the offset to avoid elements flying off too far
+                   const offset = scrolled * speed;
+                   // Use translate3d for hardware acceleration
+                   (el as HTMLElement).style.transform = `translate3d(0, ${offset}px, 0)`;
+                }
+              });
+            }, { passive: true });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
