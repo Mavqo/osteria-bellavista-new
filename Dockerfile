@@ -27,7 +27,12 @@ RUN apk add --no-cache \
 COPY package*.json ./
 
 # Installa TUTTE le dipendenze (compresi devDependencies necessari per il build)
-RUN npm ci
+# Usa npm ci solo quando il lockfile e' presente.
+RUN if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then \
+      npm ci; \
+    else \
+      npm install --no-audit --no-fund; \
+    fi
 
 # Copia tutto il codice sorgente
 COPY . .
