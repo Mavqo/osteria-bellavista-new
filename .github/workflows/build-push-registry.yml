@@ -33,12 +33,16 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Authenticate to registry (optional)
-        if: ${{ secrets.REGISTRY_USERNAME != '' && secrets.REGISTRY_PASSWORD != '' }}
-        uses: docker/login-action@v3
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ secrets.REGISTRY_USERNAME }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
+        env:
+          REGISTRY_USERNAME: ${{ secrets.REGISTRY_USERNAME }}
+          REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          if [ -n "${REGISTRY_USERNAME}" ] && [ -n "${REGISTRY_PASSWORD}" ]; then
+            echo "${REGISTRY_PASSWORD}" | docker login "${REGISTRY}" -u "${REGISTRY_USERNAME}" --password-stdin
+          else
+            echo "Registry credentials not set; continuing without auth."
+          fi
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
@@ -58,12 +62,15 @@ jobs:
         run: docker buildx imagetools inspect "${IMAGE_LATEST}"
 
       - name: Trigger Coolify redeploy webhook (with retry)
-        if: ${{ secrets.COOLIFY_DEPLOY_WEBHOOK != '' && secrets.COOLIFY_API_TOKEN != '' }}
         env:
           COOLIFY_DEPLOY_WEBHOOK: ${{ secrets.COOLIFY_DEPLOY_WEBHOOK }}
           COOLIFY_API_TOKEN: ${{ secrets.COOLIFY_API_TOKEN }}
         run: |
           set -euo pipefail
+          if [ -z "${COOLIFY_DEPLOY_WEBHOOK}" ] || [ -z "${COOLIFY_API_TOKEN}" ]; then
+            echo "COOLIFY_DEPLOY_WEBHOOK or COOLIFY_API_TOKEN not set. Skipping webhook trigger."
+            exit 0
+          fi
           for attempt in 1 2 3; do
             response="$(curl -sS -X POST "${COOLIFY_DEPLOY_WEBHOOK}" \
               -H "Authorization: Bearer ${COOLIFY_API_TOKEN}" \
@@ -78,7 +85,3 @@ jobs:
           done
           echo "Coolify redeploy webhook failed after 3 attempts."
           exit 1
-
-      - name: Webhook not configured notice
-        if: ${{ secrets.COOLIFY_DEPLOY_WEBHOOK == '' || secrets.COOLIFY_API_TOKEN == '' }}
-        run: echo "COOLIFY_DEPLOY_WEBHOOK or COOLIFY_API_TOKEN not set. Configure webhook auth or keep polling fallback monitored."
