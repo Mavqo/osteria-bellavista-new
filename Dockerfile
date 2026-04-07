@@ -9,19 +9,18 @@
 # -----------------------------------------------------------------------------
 # STAGE 1: Build
 # -----------------------------------------------------------------------------
-FROM node:20-alpine AS builder
+FROM node:20-bookworm-slim AS builder
 
 # Imposta la working directory
 WORKDIR /app
 
-# Installa dipendenze di sistema necessarie per Sharp (ottimizzazione immagini)
-RUN apk add --no-cache \
+# Installa toolchain minima per eventuali moduli nativi Node.
+RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 \
     make \
     g++ \
-    vips-dev \
-    vips-heif \
-    vips-magick
+    ca-certificates \
+  && rm -rf /var/lib/apt/lists/*
 
 # Copia i file di dipendenza prima per sfruttare la cache Docker
 COPY package*.json ./
