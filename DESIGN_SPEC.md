@@ -1,6 +1,6 @@
 # 🎨 Design Specification - Osteria Bellavista
 
-> **Template Base:** MasuRii (Astro + Tailwind)  
+> **Stack:** Astro + Tailwind CSS  
 > **Brand:** Osteria Bellavista - Ristorante Tradizionale Italiano  
 > **Posizione:** Via Pessina 12, 6900 Lugano, Svizzera  
 
@@ -688,4 +688,4 @@ resources: {
 
 ---
 
-*Documento creato per personalizzazione template MasuRii → Osteria Bellavista*
+*Documento di design per Osteria Bellavista*
