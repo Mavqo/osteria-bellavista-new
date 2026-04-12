@@ -44,7 +44,9 @@
           "name": "Valtellina Bresaola",
           "price": "CHF 24",
           "description": "Bresaola carpaccio, arugula, grana flakes, lemon oil",
-          "dietary": ["gf"],
+          "dietary": [
+            "gf"
+          ],
           "image": "/images/menu/bresaola.jpg"
         },
         {
@@ -58,7 +60,9 @@
           "name": "Mushroom Risotto",
           "price": "CHF 26",
           "description": "Carnaroli risotto, porcini and chanterelles, black truffle oil",
-          "dietary": ["v"],
+          "dietary": [
+            "v"
+          ],
           "image": "/images/menu/risotto-funghi.jpg"
         }
       ],
@@ -67,21 +71,27 @@
           "name": "Valtellina Pizzoccheri",
           "price": "CHF 22",
           "description": "Buckwheat pasta, cabbage, potatoes, Bitto cheese, sage",
-          "dietary": ["v"],
+          "dietary": [
+            "v"
+          ],
           "image": "/images/menu/pizzoccheri.jpg"
         },
         {
           "name": "Ravioli di Magro",
           "price": "CHF 24",
           "description": "Filled with ricotta and spinach, butter and sage, toasted pine nuts",
-          "dietary": ["v"],
+          "dietary": [
+            "v"
+          ],
           "image": "/images/menu/ravioli.jpg"
         },
         {
           "name": "Polenta Concia",
           "price": "CHF 20",
           "description": "Taragna polenta, Fontina Valle d'Aosta cheese, butter",
-          "dietary": ["v"],
+          "dietary": [
+            "v"
+          ],
           "image": "/images/menu/polenta.jpg"
         }
       ],
@@ -90,7 +100,9 @@
           "name": "Beef Fillet",
           "price": "CHF 48",
           "description": "Selected cut 300g, Barolo reduction, roast potatoes",
-          "dietary": ["gf"],
+          "dietary": [
+            "gf"
+          ],
           "image": "/images/menu/filetto.jpg"
         },
         {
@@ -104,7 +116,9 @@
           "name": "Sea Salt Sea Bass",
           "price": "CHF 42",
           "description": "Whole cooked in salt crust, evo oil, lemon",
-          "dietary": ["gf"],
+          "dietary": [
+            "gf"
+          ],
           "image": "/images/menu/branzino.jpg"
         }
       ],
@@ -113,21 +127,28 @@
           "name": "House Tiramisù",
           "price": "CHF 14",
           "description": "Mascarpone, ladyfingers, coffee, bitter cocoa powder",
-          "dietary": ["v"],
+          "dietary": [
+            "v"
+          ],
           "image": "/images/menu/tiramisu.jpg"
         },
         {
           "name": "Berry Panna Cotta",
           "price": "CHF 12",
           "description": "Bourbon vanilla, berry coulis, fresh mint",
-          "dietary": ["v", "gf"],
+          "dietary": [
+            "v",
+            "gf"
+          ],
           "image": "/images/menu/panna-cotta.jpg"
         },
         {
           "name": "Hazelnut Cake",
           "price": "CHF 16",
           "description": "Piedmont hazelnuts, dark chocolate, hazelnut ice cream",
-          "dietary": ["v"],
+          "dietary": [
+            "v"
+          ],
           "image": "/images/menu/torta-nocciole.jpg"
         }
       ],
@@ -136,21 +157,30 @@
           "name": "Ticino Merlot DOC",
           "price": "CHF 48",
           "description": "Cantina Orsi, Sottoceneri - Intense and structured",
-          "dietary": ["v", "gf"],
+          "dietary": [
+            "v",
+            "gf"
+          ],
           "image": "/images/menu/merlot.jpg"
         },
         {
           "name": "Ticino Chardonnay DOC",
           "price": "CHF 42",
           "description": "Cantina Monti, Mendrisiotto - Fresh and mineral",
-          "dietary": ["v", "gf"],
+          "dietary": [
+            "v",
+            "gf"
+          ],
           "image": "/images/menu/chardonnay.jpg"
         },
         {
           "name": "Nebbiolo delle Alpi",
           "price": "CHF 68",
           "description": "Riserva DOC, Valtellina - Elegant and long-lived",
-          "dietary": ["v", "gf"],
+          "dietary": [
+            "v",
+            "gf"
+          ],
           "image": "/images/menu/nebbiolo.jpg"
         }
       ]
@@ -211,21 +241,36 @@
         "description": "A romantic experience on our panoramic terrace as the sun sets over Lake Lugano. 4-course tasting menu with wine pairing.",
         "price": "180 CHF per person",
         "duration": "3 hours",
-        "includes": ["Welcome aperitif", "4-course tasting menu", "Wine pairing", "Dessert and coffee"]
+        "includes": [
+          "Welcome aperitif",
+          "4-course tasting menu",
+          "Wine pairing",
+          "Dessert and coffee"
+        ]
       },
       "wineTasting": {
         "name": "Ticino Wine Tasting",
         "description": "Journey through the Ticino vineyards with the guidance of our sommelier. Discover the unique flavors of our terroir.",
         "price": "95 CHF per person",
         "duration": "2 hours",
-        "includes": ["6 selected Ticino wines", "Local cheese platter", "Terroir explanation", "Certificate"]
+        "includes": [
+          "6 selected Ticino wines",
+          "Local cheese platter",
+          "Terroir explanation",
+          "Certificate"
+        ]
       },
       "privateEvent": {
         "name": "Private Event",
         "description": "Celebrate special moments in our private lounge with lake view. Customized menu and dedicated service to make every occasion unique.",
         "price": "On request",
         "duration": "Customizable",
-        "includes": ["Exclusive lounge", "Customized menu", "Dedicated service", "Piano on request"]
+        "includes": [
+          "Exclusive lounge",
+          "Customized menu",
+          "Dedicated service",
+          "Piano on request"
+        ]
       }
     }
   },
@@ -312,5 +357,14 @@
       "terms": "Terms of Service",
       "demoNotice": "Showcase project — demo website by Marco Digital Agency"
     }
+  },
+  "pwaInstall": {
+    "title": "Install Osteria Bellavista",
+    "description": "Install our app for a better experience and offline access.",
+    "installButton": "Install",
+    "dismissButton": "Later"
+  },
+  "instagram": {
+    "followUs": "Follow us on Instagram"
   }
 }
