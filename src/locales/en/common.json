@@ -14,14 +14,14 @@
     "description": "Osteria Bellavista represents the harmony between Ticino tradition and the beauty of Lake Lugano. For over 35 years we have brought the authentic flavors of the territory to the table, selecting local and seasonal ingredients.",
     "philosophy": "We believe in the purity of ingredients and respect for tradition. Every dish tells a story of our territory.",
     "chef": {
-      "name": "Chef Giovanni Rossi",
+      "name": "Chef Carlo Bernasconi",
       "title": "Executive Chef",
-      "bio": "With over 30 years of experience in Ticino cuisine, Chef Giovanni brings the tradition of the territory to every dish. Trained in the best osterias of Valtellina and Ticino."
+      "bio": "With over 30 years of experience in Ticino cuisine, Chef Carlo brings the tradition of the territory to every dish. Trained in the best osterias of Valtellina and Ticino."
     },
     "sommelier": {
-      "name": "Marco Bianchi",
+      "name": "Luca Cavadini",
       "title": "Sommelier",
-      "bio": "Expert in Ticino and Italian wines, Marco curates our cellar selecting the best labels from the territory."
+      "bio": "Expert in Ticino and Italian wines, Luca curates our cellar selecting the best labels from the territory."
     }
   },
   "menu": {
@@ -189,7 +189,7 @@
     "getDirections": "Get Directions",
     "parking": "Parking available nearby.",
     "contact": {
-      "phone": "+41 91 123 45 67",
+      "phone": "+41 91 921 35 60",
       "email": "info@osteriabellavista.ch"
     },
     "hours": {
@@ -292,7 +292,7 @@
     "contact": {
       "heading": "Contact",
       "address": "Via Pessina 12, 6900 Lugano, Ticino, Switzerland",
-      "phone": "+41 91 123 45 67",
+      "phone": "+41 91 921 35 60",
       "email": "info@osteriabellavista.ch"
     },
     "hours": {
@@ -309,7 +309,8 @@
     "legal": {
       "copyright": "© {{year}} Osteria Bellavista. All rights reserved.",
       "privacy": "Privacy Policy",
-      "terms": "Terms of Service"
+      "terms": "Terms of Service",
+      "demoNotice": "Showcase project — demo website by Marco Digital Agency"
     }
   }
 }

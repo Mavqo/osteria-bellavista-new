@@ -14,14 +14,14 @@
     "description": "Osteria Bellavista rappresenta l'armonia tra la tradizione ticinese e la bellezza del Lago di Lugano. Da oltre 35 anni portiamo in tavola i sapori autentici del territorio, selezionando ingredienti locali e di stagione.",
     "philosophy": "Crediamo nella purezza degli ingredienti e nel rispetto della tradizione. Ogni piatto racconta una storia del nostro territorio.",
     "chef": {
-      "name": "Chef Giovanni Rossi",
+      "name": "Chef Carlo Bernasconi",
       "title": "Chef Executive",
-      "bio": "Con oltre 30 anni di esperienza nella cucina ticinese, il Chef Giovanni porta la tradizione del territorio in ogni piatto. Formatosi nelle migliori osterie della Valtellina e del Ticino."
+      "bio": "Con oltre 30 anni di esperienza nella cucina ticinese, il Chef Carlo porta la tradizione del territorio in ogni piatto. Formatosi nelle migliori osterie della Valtellina e del Ticino."
     },
     "sommelier": {
-      "name": "Marco Bianchi",
+      "name": "Luca Cavadini",
       "title": "Sommelier",
-      "bio": "Esperto di vini ticinesi e italiani, Marco cura la nostra cantina selezionando le migliori etichette del territorio."
+      "bio": "Esperto di vini ticinesi e italiani, Luca cura la nostra cantina selezionando le migliori etichette del territorio."
     }
   },
   "menu": {
@@ -189,7 +189,7 @@
     "getDirections": "Ottieni Indicazioni",
     "parking": "Parcheggio disponibile nelle vicinanze.",
     "contact": {
-      "phone": "+41 91 123 45 67",
+      "phone": "+41 91 921 35 60",
       "email": "info@osteriabellavista.ch"
     },
     "hours": {
@@ -250,6 +250,12 @@
     "openMenu": "Apri menu principale",
     "closeMenu": "Chiudi menu principale"
   },
+  "demoDisclaimer": {
+    "title": "Questo è un sito dimostrativo",
+    "description": "Stai visualizzando un sito web dimostrativo creato da Marco Digital Agency. Il link che hai cliccato è un segnaposto e non porta a una destinazione reale.",
+    "iUnderstand": "Ho capito",
+    "dontShowAgain": "Non mostrare più"
+  },
   "newsletterModal": {
     "title": "Un Regalo dalla Cucina",
     "description": "Iscriviti alla nostra newsletter per ricevere inviti esclusivi e anteprime del menu stagionale.",
@@ -269,7 +275,7 @@
     "contact": {
       "heading": "Contatti",
       "address": "Via Pessina 12, 6900 Lugano, Ticino, Svizzera",
-      "phone": "+41 91 123 45 67",
+      "phone": "+41 91 921 35 60",
       "email": "info@osteriabellavista.ch"
     },
     "hours": {
@@ -286,7 +292,8 @@
     "legal": {
       "copyright": "© {{year}} Osteria Bellavista. Tutti i diritti riservati.",
       "privacy": "Privacy Policy",
-      "terms": "Termini di Servizio"
+      "terms": "Termini di Servizio",
+      "demoNotice": "Progetto showcase — sito dimostrativo realizzato da Marco Digital Agency"
     }
   }
 }

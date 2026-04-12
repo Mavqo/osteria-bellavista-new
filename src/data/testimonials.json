@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "name": "Marco Rossi",
+    "name": "Andrea Pedrazzi",
     "role": "Cliente Verificato",
     "rating": 5,
     "quote": "Un'esperienza indimenticabile. Il filetto di manzo era perfetto e la vista sul lago al tramonto ha reso la serata magica. Il servizio impeccabile ci ha fatto sentire come a casa.",
@@ -9,7 +9,7 @@
   },
   {
     "id": "2",
-    "name": "Anna Schmidt",
+    "name": "Petra Baumann",
     "role": "Tourist",
     "rating": 5,
     "quote": "During our trip to Ticino, Osteria Bellavista was the highlight. The authentic local cuisine, the wine selection, and that incredible lake view - simply perfect!",
@@ -17,7 +17,7 @@
   },
   {
     "id": "3",
-    "name": "Giulia Bianchi",
+    "name": "Chiara Bentoglio",
     "role": "Food Blogger",
     "rating": 5,
     "quote": "La tradizione ticinese rivisitata con eleganza. I pizzoccheri erano favolosi e il tiramisù della casa è tra i migliori che abbia mai assaggiato. Un must a Lugano!",
@@ -25,7 +25,7 @@
   },
   {
     "id": "4",
-    "name": "Thomas Müller",
+    "name": "Stefan Käser",
     "role": "Cliente Verificato",
     "rating": 5,
     "quote": "Wir kommen jedes Jahr wieder! Die Qualität ist konstant hervorragend und die Atmosphäre einzigartig. Der Merlot del Ticino ist ein Traum.",
