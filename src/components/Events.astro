@@ -4,6 +4,13 @@ import events from '../data/events.json';
 
 const t = useTranslations(Astro.currentLocale || 'it');
 
+// Map event IDs to locale translation keys
+const eventI18nMap: Record<string, string> = {
+  'cena-tramonto': 'sunsetDinner',
+  'degustazione-vini': 'wineTasting',
+  'evento-privato': 'privateEvent',
+};
+
 // Ensure base URL ends with a slash
 const rawBase = import.meta.env.BASE_URL;
 const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
@@ -19,13 +26,32 @@ const getImagePath = (path: string) => {
     return `${base}${cleanPath}`;
 }
 
+// Helper to get translated event field
+const getEventName = (event: typeof events[0]) => {
+  const key = eventI18nMap[event.id];
+  if (key) return t(`events.list.${key}.name`);
+  return event.name;
+};
+
+const getEventDescription = (event: typeof events[0]) => {
+  const key = eventI18nMap[event.id];
+  if (key) return t(`events.list.${key}.description`);
+  return event.description;
+};
+
+const getEventPrice = (event: typeof events[0]) => {
+  const key = eventI18nMap[event.id];
+  if (key) return t(`events.list.${key}.price`);
+  return event.price;
+};
+
 // Generate Event Schema
 const eventsSchema = {
   "@context": "https://schema.org",
   "@graph": events.filter(e => e.type === 'event').map(event => ({
     "@type": "Event",
-    "name": event.name,
-    "description": event.description,
+    "name": getEventName(event),
+    "description": getEventDescription(event),
     "startDate": event.date,
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -46,7 +72,7 @@ const eventsSchema = {
     ],
     "offers": {
         "@type": "Offer",
-        "price": event.price?.replace('CHF ', '').replace(' a persona', ''),
+        "price": event.price?.replace('CHF ', '').replace(' a persona', '').replace(' per person', ''),
         "priceCurrency": "CHF",
         "url": `${base}${event.url}`
     }
@@ -70,7 +96,7 @@ const eventsSchema = {
           <div class="relative aspect-[4/3] overflow-hidden">
              <img 
                 src={getImagePath(event.image)} 
-                alt={event.name}
+                alt={getEventName(event)}
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
              />
@@ -83,13 +109,13 @@ const eventsSchema = {
           </div>
           
           <div class="p-8 flex flex-col flex-grow">
-            <h3 class="text-2xl font-serif font-medium mb-3">{event.name}</h3>
+            <h3 class="text-2xl font-serif font-medium mb-3">{getEventName(event)}</h3>
             <p class="text-charcoal/70 dark:text-alabaster/70 mb-6 flex-grow leading-relaxed">
-                {event.description}
+                {getEventDescription(event)}
             </p>
             
             <div class="pt-6 border-t border-stone-200 dark:border-alabaster/20 flex items-center justify-between mt-auto">
-                <span class="font-serif text-lg text-amber-900 dark:text-gold">{event.price || 'Market Price'}</span>
+                <span class="font-serif text-lg text-amber-900 dark:text-gold">{getEventPrice(event) || 'Market Price'}</span>
                 
                 <a 
                     href={event.url || '#contact'} 
