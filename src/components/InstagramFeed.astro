@@ -1,4 +1,8 @@
 ---
+import { useTranslations } from '../lib/i18n';
+
+const t = useTranslations(Astro.currentLocale || 'it');
+
 // Ensure base URL ends with a slash
 const base = import.meta.env.BASE_URL.endsWith('/') 
   ? import.meta.env.BASE_URL 
@@ -23,7 +27,7 @@ const posts = [
     </div>
     <h2 class="text-3xl md:text-4xl font-serif text-charcoal dark:text-alabaster mb-6">Follow the Journey</h2>
     <a href="https://instagram.com/osteriabellavista" target="_blank" rel="noopener noreferrer" class="inline-block border-b border-charcoal dark:border-alabaster text-charcoal dark:text-alabaster hover:text-amber-900 dark:hover:text-gold hover:border-amber-900 dark:hover:border-gold transition-colors pb-1">
-      Seguici su Instagram
+      {t('instagram.followUs')}
     </a>
   </div>
 
