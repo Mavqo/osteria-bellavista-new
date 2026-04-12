@@ -44,7 +44,9 @@
           "name": "Bresaola della Valtellina",
           "price": "CHF 24",
           "description": "Carpaccio di bresaola, rucola, scaglie di grana, olio al limone",
-          "dietary": ["gf"],
+          "dietary": [
+            "gf"
+          ],
           "image": "/images/menu/bresaola.jpg"
         },
         {
@@ -58,7 +60,9 @@
           "name": "Risotto ai Funghi",
           "price": "CHF 26",
           "description": "Risotto carnaroli, porcini e finferli, olio al tartufo nero",
-          "dietary": ["v"],
+          "dietary": [
+            "v"
+          ],
           "image": "/images/menu/risotto-funghi.jpg"
         }
       ],
@@ -67,21 +71,27 @@
           "name": "Pizzoccheri della Valtellina",
           "price": "CHF 22",
           "description": "Pasta di grano saraceno, cavolo, patate, formaggio Bitto, salvia",
-          "dietary": ["v"],
+          "dietary": [
+            "v"
+          ],
           "image": "/images/menu/pizzoccheri.jpg"
         },
         {
           "name": "Ravioli di Magro",
           "price": "CHF 24",
           "description": "Ripieni di ricotta e spinaci, burro e salvia, pinoli tostati",
-          "dietary": ["v"],
+          "dietary": [
+            "v"
+          ],
           "image": "/images/menu/ravioli.jpg"
         },
         {
           "name": "Polenta Concia",
           "price": "CHF 20",
           "description": "Polenta taragna, formaggio Fontina Valle d'Aosta, burro",
-          "dietary": ["v"],
+          "dietary": [
+            "v"
+          ],
           "image": "/images/menu/polenta.jpg"
         }
       ],
@@ -90,7 +100,9 @@
           "name": "Filetto di Manzo",
           "price": "CHF 48",
           "description": "Taglio scelto 300g, riduzione al Barolo, patate arrosto",
-          "dietary": ["gf"],
+          "dietary": [
+            "gf"
+          ],
           "image": "/images/menu/filetto.jpg"
         },
         {
@@ -104,7 +116,9 @@
           "name": "Branzino al Sale",
           "price": "CHF 42",
           "description": "Intero cotto in crosta di sale, olio evo, limone",
-          "dietary": ["gf"],
+          "dietary": [
+            "gf"
+          ],
           "image": "/images/menu/branzino.jpg"
         }
       ],
@@ -113,21 +127,28 @@
           "name": "Tiramisù della Casa",
           "price": "CHF 14",
           "description": "Mascarpone, savoiardi, caffè, cacao amaro in polvere",
-          "dietary": ["v"],
+          "dietary": [
+            "v"
+          ],
           "image": "/images/menu/tiramisu.jpg"
         },
         {
           "name": "Panna Cotta ai Frutti di Bosco",
           "price": "CHF 12",
           "description": "Vaniglia bourbon, coulis di frutti di bosco, menta fresca",
-          "dietary": ["v", "gf"],
+          "dietary": [
+            "v",
+            "gf"
+          ],
           "image": "/images/menu/panna-cotta.jpg"
         },
         {
           "name": "Torta di Nocciole",
           "price": "CHF 16",
           "description": "Nocciole del Piemonte, cioccolato fondente, gelato alla nocciola",
-          "dietary": ["v"],
+          "dietary": [
+            "v"
+          ],
           "image": "/images/menu/torta-nocciole.jpg"
         }
       ],
@@ -136,21 +157,30 @@
           "name": "Merlot del Ticino DOC",
           "price": "CHF 48",
           "description": "Cantina Orsi, Sottoceneri - Intenso e strutturato",
-          "dietary": ["v", "gf"],
+          "dietary": [
+            "v",
+            "gf"
+          ],
           "image": "/images/menu/merlot.jpg"
         },
         {
           "name": "Chardonnay Ticino DOC",
           "price": "CHF 42",
           "description": "Cantina Monti, Mendrisiotto - Fresco e minerale",
-          "dietary": ["v", "gf"],
+          "dietary": [
+            "v",
+            "gf"
+          ],
           "image": "/images/menu/chardonnay.jpg"
         },
         {
           "name": "Nebbiolo delle Alpi",
           "price": "CHF 68",
           "description": "Riserva DOC, Valtellina - Elegante e longevo",
-          "dietary": ["v", "gf"],
+          "dietary": [
+            "v",
+            "gf"
+          ],
           "image": "/images/menu/nebbiolo.jpg"
         }
       ]
@@ -211,21 +241,36 @@
         "description": "Un'esperienza romantica sulla nostra terrazza panoramica mentre il sole calda sul Lago di Lugano. Menu degustazione 4 portate con abbinamento vini.",
         "price": "180 CHF a persona",
         "duration": "3 ore",
-        "includes": ["Aperitivo di benvenuto", "Menu degustazione 4 portate", "Abbinamento vini", "Dolce e caffè"]
+        "includes": [
+          "Aperitivo di benvenuto",
+          "Menu degustazione 4 portate",
+          "Abbinamento vini",
+          "Dolce e caffè"
+        ]
       },
       "wineTasting": {
         "name": "Degustazione Vini Ticinesi",
         "description": "Viaggia attraverso i vigneti del Ticino con la guida del nostro sommelier. Scopri i sapori unici dei nostri terroir.",
         "price": "95 CHF a persona",
         "duration": "2 ore",
-        "includes": ["6 vini ticinesi selezionati", "Tagliere di formaggi locali", "Spiegazione del territorio", "Attestato"]
+        "includes": [
+          "6 vini ticinesi selezionati",
+          "Tagliere di formaggi locali",
+          "Spiegazione del territorio",
+          "Attestato"
+        ]
       },
       "privateEvent": {
         "name": "Evento Privato",
         "description": "Celebra momenti speciali nel nostro salone privato con vista lago. Menu personalizzato e servizio dedicato per rendere unica ogni occasione.",
         "price": "Su richiesta",
         "duration": "Personalizzabile",
-        "includes": ["Salone esclusivo", "Menu personalizzato", "Servizio dedicato", "Pianoforte su richiesta"]
+        "includes": [
+          "Salone esclusivo",
+          "Menu personalizzato",
+          "Servizio dedicato",
+          "Pianoforte su richiesta"
+        ]
       }
     }
   },
@@ -295,5 +340,14 @@
       "terms": "Termini di Servizio",
       "demoNotice": "Progetto showcase — sito dimostrativo realizzato da Marco Digital Agency"
     }
+  },
+  "pwaInstall": {
+    "title": "Installa Osteria Bellavista",
+    "description": "Installa la nostra app per un'esperienza migliore e accesso offline.",
+    "installButton": "Installa",
+    "dismissButton": "Più tardi"
+  },
+  "instagram": {
+    "followUs": "Seguici su Instagram"
   }
 }
