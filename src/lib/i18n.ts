@@ -2,7 +2,7 @@ import i18next from 'i18next';
 import enCommon from '../locales/en/common.json';
 import itCommon from '../locales/it/common.json';
 
-export const defaultLocale = 'it';
+export const defaultLocale = 'en';
 export const locales = ['it', 'en'] as const;
 
 // Initialize globally
