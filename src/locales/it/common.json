@@ -295,12 +295,6 @@
     "openMenu": "Apri menu principale",
     "closeMenu": "Chiudi menu principale"
   },
-  "demoDisclaimer": {
-    "title": "Questo è un sito dimostrativo",
-    "description": "Stai visualizzando un sito web dimostrativo creato da Marco Digital Agency. Il link che hai cliccato è un segnaposto e non porta a una destinazione reale.",
-    "iUnderstand": "Ho capito",
-    "dontShowAgain": "Non mostrare più"
-  },
   "newsletterModal": {
     "title": "Un Regalo dalla Cucina",
     "description": "Iscriviti alla nostra newsletter per ricevere inviti esclusivi e anteprime del menu stagionale.",
@@ -337,8 +331,7 @@
     "legal": {
       "copyright": "© {{year}} Osteria Bellavista. Tutti i diritti riservati.",
       "privacy": "Privacy Policy",
-      "terms": "Termini di Servizio",
-      "demoNotice": "Progetto showcase — sito dimostrativo realizzato da Marco Digital Agency"
+      "terms": "Termini di Servizio"
     }
   },
   "pwaInstall": {

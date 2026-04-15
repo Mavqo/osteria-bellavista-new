@@ -321,12 +321,6 @@
     "returnHome": "Return Home",
     "reserveTable": "Reserve a Table"
   },
-  "demoDisclaimer": {
-    "title": "This is a Demo Website",
-    "description": "You are viewing a sample restaurant website template. The link you clicked is a placeholder and does not lead to a real destination.",
-    "iUnderstand": "I Understand",
-    "dontShowAgain": "Don't show again"
-  },
   "footer": {
     "newsletter": {
       "heading": "Join our circle",
@@ -354,8 +348,7 @@
     "legal": {
       "copyright": "© {{year}} Osteria Bellavista. All rights reserved.",
       "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "demoNotice": "Showcase project — demo website by Marco Digital Agency"
+      "terms": "Terms of Service"
     }
   },
   "pwaInstall": {

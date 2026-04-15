@@ -10,7 +10,6 @@ import FloatingCTA from '../components/FloatingCTA.astro';
 import BackToTop from '../components/BackToTop.astro';
 import { NewsletterModal } from '../components/NewsletterModal';
 import { OrderOnlineModal } from '../components/OrderOnlineModal';
-import { DemoDisclaimerModal } from '../components/DemoDisclaimerModal';
 import SEOSchema from '../components/SEOSchema.astro';
 import PWAHandler from '../components/PWAHandler.astro';
 
@@ -122,15 +121,6 @@ const base = import.meta.env.BASE_URL.endsWith('/')
         schedule: t('orderOnline.schedule'),
         close: t('orderOnline.close'),
         orderNow: t('orderOnline.orderNow'),
-      }}
-    />
-    <DemoDisclaimerModal
-      client:load
-      strings={{
-        title: t('demoDisclaimer.title'),
-        description: t('demoDisclaimer.description'),
-        iUnderstand: t('demoDisclaimer.iUnderstand'),
-        dontShowAgain: t('demoDisclaimer.dontShowAgain'),
       }}
     />
     <PWAHandler />

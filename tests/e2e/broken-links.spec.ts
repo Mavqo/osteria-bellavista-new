@@ -34,7 +34,6 @@ test.describe('Link Validation', () => {
       } else if (href.startsWith('http')) {
         // External link - just check if it's a valid URL format for now
         // We avoid fetch checks to prevent external network dependency flakiness
-        // and because of the demo interceptor
         expect(href).toMatch(/^https?:\/\//);
       }
     }
